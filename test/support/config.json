@@ -1,0 +1,23 @@
+{
+  "server" : "localhost",
+  "port"   : 80,
+  "runs"   : 9,
+  "uri"    : "/foobar?foo=bar&bar=foo",
+
+  "yslow"   : [
+    "--info", "basic"
+  ],
+
+  "httperf" : {
+    "hog": true
+  },
+
+  "thresholds": {
+    "yslow": {
+      "o": 75
+    },
+    "httperf": {
+      "connection_time_median": 500
+    }
+  }
+}

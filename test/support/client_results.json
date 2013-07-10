@@ -1,0 +1,12 @@
+[
+  {
+    "requests": 10,
+    "windowOnLoadTime": 1000
+  }, {
+    "requests": 20,
+    "windowOnLoadTime": 1500
+  }, {
+    "requests": 15,
+    "windowOnLoadTime": 2000
+  }
+]

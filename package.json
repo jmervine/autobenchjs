@@ -1,0 +1,32 @@
+{
+  "name": "autobench",
+  "version": "0.0.1",
+  "description": "Autobench",
+  "main": "./lib/autobench.js",
+  "scripts": {
+    "test": "make tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmervine/autobenchjs.git"
+  },
+  "keywords": [
+    "httperf",
+    "yslow",
+    "phantomas",
+    "performance"
+  ],
+  "author": "Joshua Mervine <joshua@mervine.net> (http://mervine.net)",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/jmervine/autobenchjs/issues"
+  },
+  "dependencies": {
+    "httperfjs": "0.0.1",
+    "phapper": "0.0.1",
+    "underscore": "~1.5.1"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
+  }
+}

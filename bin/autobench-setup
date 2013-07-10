@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+test "$DEBUG" && set -x
+
+YSLOW_VERSION="3.1.5"
+PHANTOMAS_VERSION="0.4.1"
+DEST=`pwd`
+
+rm -rf /tmp/$PHANTOMAS_VERSION.zip              \
+        /tmp/phantomas-$PHANTOMAS_VERSION       \
+        /tmp/yslow-phantomjs-$YSLOW_VERSION.zip \
+        /tmp/yslow.js                           \
+        ./phantomas                             \
+        ./yslow.js
+
+cd /tmp
+
+echo "Fetching yslow.js:"
+wget -nv http://yslow.org/yslow-phantomjs-$YSLOW_VERSION.zip
+unzip -q yslow-phantomjs-$YSLOW_VERSION.zip
+mv yslow.js $DEST
+
+echo " "
+echo "Fetching phantomas.js:"
+wget -nv https://github.com/macbre/phantomas/archive/0.4.1.zip
+unzip -q $PHANTOMAS_VERSION.zip
+mv phantomas-$PHANTOMAS_VERSION $DEST/phantomas
+
+echo " "
+echo "Cleaning up /tmp:"
+rm -v -rf /tmp/$PHANTOMAS_VERSION.zip           \
+        /tmp/yslow-phantomjs-$YSLOW_VERSION.zip
+
+test "$DEBUG" && set +x
+
+echo " "
+echo -e "yslow.js:\n=> $DEST/yslow.js"
+echo " "
+echo -e "phantomas.js:\n=> $DEST/phantomas/phantomas.js"
+
+# vim: ft=sh:
